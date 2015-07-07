@@ -3,29 +3,26 @@
   angular
     .module('craftShaq')
     .factory('ProductService',
-    function ($http, _,) {
+    function ($http, _) {
 
-      var urlOpts = {
-        etsyUrl: 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&keywords=shaq&api_key=b80iy4v7dpou7xau5eaqlzge&callback=JSON_CALLBACK',
-        format: 'json',
-      };
+      var etsyUrl = 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&keywords=shaq&api_key=b80iy4v7dpou7xau5eaqlzge&callback=JSON_CALLBACK';
 
       var getItems = function () {
-        return $http.get(etsyUrl).then(function (items) {
-          var shaqArray = data.results;
+        return $http.jsonp(etsyUrl).then(function (data) {
+          var shaqArray = data.data.results;
           return shaqArray;
         });
       };
 
       var getSingleItem = function(listing_id) {
-        return $http.get(etsyUrl).then(function (items) {
-          var narrowedDownArr = _.where(data.results, {listing_id: listing_id});
+        return $http.jsonp(etsyUrl).then(function (data) {
+          var narrowedDownArr = _.where(data, {listing_id: listing_id});
           return narrowedDownArr[0];
         });
       };
 
       return {
-        getItem: getItem,
+        getItems: getItems,
         getSingleItem: getSingleItem
       };
   })

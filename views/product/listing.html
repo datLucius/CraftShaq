@@ -1,5 +1,6 @@
 <div clas="sortByLine">
   <ul class="sortByBox">
+    <li>Sort By</li>
     <li class="sortBtn">AZ</li>
     <li class="sortBtn">$$</li>
   </ul>
@@ -7,15 +8,15 @@
 <div class="container">
 
   <div class="item" ng-repeat="item in items" data-id="{{item.listing_id}}">
-    
-    <img ng-src="{{item.MainImage.url_75x75}}" class="listingImg"/>
+
     <ul class="listingInfo">
       <li class="titleAndPrice">
         <div class="listTitle">{{item.title}}</div>
+          <img ng-src="{{item.MainImage.url_75x75}}" class="listingImg"/>
         <div class="listPrice">{{item.price | currency}}</div>
       </li>
       <li class="addToCart">
-        <button type="button">+</button>
+        <button type="button">ADD TO CART</button>
       </li>
     </ul>
     <div class="listEtsySourceUrl">{{item.url}}</div>
