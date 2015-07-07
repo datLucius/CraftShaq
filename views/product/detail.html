@@ -1,0 +1,7 @@
+<div class="detailContainer">
+  <div class="detailTitle">{{item.title}}</div>
+  <div class="detailPrice">{{item.price | currency}}</div>
+  <img ng-src="{{item.MainImage.url_170x135}}" class="detailImg"/>
+  <div class="detailDescription">Description: {{item.description}}</div>
+  <div class="detailMaterials">Materials: {{item.materials || 'N/A'}}</div>
+</div>
