@@ -5,13 +5,15 @@
     .module('craftShaq', [
       'ngRoute',
       'underscore',
+      'cart',
+      'products'
     ])
     .config(function
     ($routeProvider) {
       $routeProvider
         .when('/', {
           templateUrl:
-          'views/product/listing.html',
+          'product/views/listing.html',
           controller:
           'ProductController'
         })
@@ -21,14 +23,14 @@
           controller:
           'CartController'
         })
-        .when('/detail/:listing_id', {
+        .when('/detail/:itemId', {
           templateUrl:
-          'views/detail.html',
+          'products/views/detail.html',
           controller:
           'ProductController'
         })
         .when('/404', {
-          template: '<h2>Even Shaq misses sometimes....Shaq on free-throws: “I’ll hit them when it matters.”</h2>'
+          template: '<h2>Even Shaq misses sometimes....</h2><aside>Shaq on free-throws: “I’ll hit them when it matters.”</side>'
         })
         .otherwise({
           redirectTo: '/404'
@@ -40,4 +42,5 @@
       ($window) {
         return $window._;
       });
+      
 })();

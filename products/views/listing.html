@@ -16,8 +16,9 @@
         <div class="listPrice">{{item.price | currency}}</div>
       </li>
       <li class="addToCart">
-        <button type="button">ADD TO CART</button>
+        <button type="button" ng-click="addCartItem(item)">ADD TO CART</button>
       </li>
+      <li><a href="#/detail/{{item.listing_id}}">MORE</a></li>
     </ul>
     <div class="listEtsySourceUrl">{{item.url}}</div>
 

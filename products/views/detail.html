@@ -1,6 +1,7 @@
-<div class="detailContainer">
+<h3>SHAQ FAQ ATTACK</h3>
+<div class="detailContainer" data-id="{{item.listing_id}}">
   <div class="detailTitle">{{item.title}}</div>
-  <div class="detailPrice">{{item.price | currency}}</div>
+  <div class="detailPrice">Price: {{item.price | currency}}</div>
   <img ng-src="{{item.MainImage.url_170x135}}" class="detailImg"/>
   <div class="detailDescription">Description: {{item.description}}</div>
   <div class="detailMaterials">Materials: {{item.materials || 'N/A'}}</div>

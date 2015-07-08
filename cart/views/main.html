@@ -1,6 +1,6 @@
 <h1> CART </h1>
 <div class="cartContainer">
-  <ul class="cartItemDisplay" ng-repeat="item in items" data-id="{{item.listing_id}}">
+  <ul class="cartItemDisplay" ng-repeat="item in cartItems" data-id="{{item.listing_id}}">
     <li class="cartImage"><img ng-src="{{item.MainImage.url_75x75}}" alt=""></li>
     <li class="cartItemInfo">
       <div class="cartItemTitle">{{item.title}}</div>
